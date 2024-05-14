@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otieno Omullo's Personal Webpage</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add your favicon here -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +12,7 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
+            line-height: 1.6; /* Improve readability */
         }
         header {
             background: #1f1f1f;
@@ -24,6 +26,9 @@
             display: flex;
             justify-content: center;
             background: #333333;
+            position: sticky; /* Make navigation bar sticky */
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: #ffffff;
@@ -40,6 +45,28 @@
             max-width: 100%;
             height: auto;
             margin: 10px 0;
+        }
+        footer {
+            background: #1f1f1f;
+            padding: 10px 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1f1f1f;
+            color: #ffffff;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+        }
+        /* Add responsiveness for mobile devices */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -58,54 +85,31 @@
     <a href="#photos">Photos</a>
 </nav>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        Hello! I'm Otieno Omullo, a full stack software engineer with extensive experience in cloud infrastructure and data analytics. I currently work with Oracle Corp, where I contribute to the Oracle Cloud Infrastructure team. My professional journey has taken me through roles at Uber, Cornell University, and Equity Bank, providing me with a rich and diverse skill set.
-    </p>
-</section>
+<!-- Your sections here -->
 
-<section id="projects">
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>Water Electrolysis for Propulsion of a Crewed Mars Mission:</strong> Designed control software and rigorous tests for the Lunar CubeSat: CisLunar Explorers project, which will launch two CubeSat satellites as a secondary payload on NASA's Artemis 1 mission.</li>
-        <li><strong>Conversational AI Researcher - Designing AI Group @Cornell:</strong> My team designed a range of high-consequence AI applications, including decision support systems for healthcare, text generation as writing assistants, and voice-based AI systems for blind users.</li>
-    </ul>
-</section>
+<footer>
+    <p>Copyright &copy; 2022 Otieno Omullo</p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+</footer>
 
-<section id="resume">
-    <h2>Resume</h2>
-    <p>View my full resume <a href="/path/to/resume.pdf" target="_blank" style="color: #4caf50;">here</a>.</p>
-</section>
+<div class="back-to-top">Back to Top</div>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:frankomullo@gmail.com" style="color: #4caf50;">frankomullo@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/omullo" target="_blank" style="color: #4caf50;">github.com/omullo</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/otieno-omullo" target="_blank" style="color: #4caf50;">linkedin.com/in/otieno-omullo</a></p>
-</section>
+<script>
+    // Show/Hide back to top button
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.querySelector('.back-to-top').style.display = "block";
+        } else {
+            document.querySelector('.back-to-top').style.display = "none";
+        }
+    };
 
-<section id="blog">
-    <h2>Blog</h2>
-    <article>
-        <h3>Sample Blog Post</h3>
-        <p>Welcome to my blog! This is a placeholder post. I'll be sharing my thoughts on software engineering, technology trends, and my personal experiences here. Stay tuned for updates!</p>
-    </article>
-</section>
-
-<section id="photos">
-    <h2>Photos</h2>
-    <div class="photo-gallery">
-        <img src="/mnt/data/98C3E3A4-F51A-4496-A368-DC9947264207.jpeg" alt="Sunset">
-        <img src="/mnt/data/B596B14C-945A-46EE-BA25-0AA8C7E86AB0.jpeg" alt="Person at restaurant">
-        <img src="/mnt/data/BFC96117-FFB6-47B5-88BD-629B944F0D4F.jpeg" alt="Couple at event">
-        <img src="/mnt/data/46D9C38A-12B6-492F-93D0-103734F38C08.jpeg" alt="Person with wine">
-        <img src="/mnt/data/9056C9E9-997E-473C-B83A-508EF5B0E2C9.jpeg" alt="Person thinking">
-        <img src="/mnt/data/0A736704-FD01-4E6E-B636-63715EF3D1AC.jpeg" alt="Person outdoors">
-        <img src="/mnt/data/6F010A53-BAB8-457F-9CE1-19F4E75351C9.jpeg" alt="Person in suit">
-        <img src="/mnt/data/8E11F169-0744-45A4-9811-2E9BB7BB8630.jpeg" alt="Person with wine glass">
-    </div>
-</section>
+    // Scroll to top when back to top button is clicked
+    document.querySelector('.back-to-top').addEventListener('click', function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+</script>
 
 </body>
 </html>
